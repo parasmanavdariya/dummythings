@@ -1,24 +1,27 @@
 import { useState } from 'react'
-
+import Link from 'next/link';
 function NavLink({to, children}) {
-    return <a href={to} className={`mx-4`}>
+    return <Link href={to} className={`mx-4`}>
         {children}
-    </a>
+    </Link>
 }
 
 function MobileNav({open, setOpen}) {
     return (
         <div className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
             <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20 " style={{zIndex:"99999999999"}}> {/*logo container*/}
-                <a className="text-xl font-semibold" href="/">DummyThings</a>
+                <Link href="/"><a className="text-xl font-semibold">DummyThings</a></Link>
             </div>
             <div className="flex flex-col ml-4">
-                <a className="text-xl font-medium my-4" href="/about" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
-                    About
-                </a>
-                <a className="text-xl font-normal my-4" href="/contact" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
-                    Contact
-                </a>
+            <Link href="/service" onClick={() => setTimeout(() => {setOpen(!open)}, 100)} passHref={true}>
+               <a className="text-xl font-medium my-4">Service</a>   
+                </Link>
+                <Link  href="/about" onClick={() => setTimeout(() => {setOpen(!open)}, 100)} passHref={true}>
+                <a className="text-xl font-medium my-4">About Us</a> 
+                </Link>
+                <Link href="/contact" onClick={() => setTimeout(() => {setOpen(!open)}, 100)} passHref={true}>
+               <a className="text-xl font-medium my-4">Contact</a>   
+                </Link>
             </div>  
         </div>
     )
@@ -31,7 +34,7 @@ export default function Navbar() {
         <nav className="flex filter drop-shadow-sm bg-white px-4 py-4 h-20 items-center z-50">
             <MobileNav open={open} setOpen={setOpen}/>
             <div className="w-3/12 flex items-center">
-                <a className="text-2xl font-semibold" href="/">DummyThings</a>
+                <Link href="/"><a className="text-xl font-semibold">DummyThings</a></Link>
             </div>
             <div className="w-9/12 flex justify-end items-center">
 
@@ -46,13 +49,13 @@ export default function Navbar() {
 
                 <div className="hidden md:flex">
                 <NavLink to="/service">
-                    Service
+                   <a className="text-xl font-medium my-4 mx-4">Service</a> 
                     </NavLink>
                     <NavLink to="/contact">
-                        Contact
+                    <a className="text-xl font-medium my-4 mx-4">Contact</a>  
                     </NavLink>
                     <NavLink to="/about">
-                        About
+                    <a className="text-xl font-medium my-4 mx-4">About</a>   
                     </NavLink>
                 </div>
             </div>
