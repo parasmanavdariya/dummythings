@@ -1,4 +1,4 @@
-[
+export const userdata =[
     {"id":1,"first_name":"Krishnah","last_name":"Stute","email":"kstute0@theatlantic.com","gender":"Male","ip_address":"154.0.133.63"},
 {"id":2,"first_name":"Nelie","last_name":"Stone Fewings","email":"nstonefewings1@bizjournals.com","gender":"Female","ip_address":"251.193.141.27"},
 {"id":3,"first_name":"Orlando","last_name":"Jekel","email":"ojekel2@timesonline.co.uk","gender":"Male","ip_address":"243.75.198.49"},
