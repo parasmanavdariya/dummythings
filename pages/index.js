@@ -6,13 +6,13 @@ import Feature from "../components/Feature";
 import HeaderBanner from "../components/HeaderBanner";
 export default function Home() {
   return (
-    <div>
+    <>
       <DocumentHead title={"Home"}/>
       <HeaderBanner/>
       <Navbar/>
       <Banner/>
       <Feature/>
       <CTA/>
-    </div>
+    </>
   )
 }
